@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assests/css/style.css">
+
+    <title>Gasto semanal</title>
+  </head>
+  <body>
+    <header class="titulo">
+      <h1>Gasto semanal</h1>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm izquierda">
+          <form>
+            <div class="form-group">
+              <label class="ingresar-presupuesto">Ingresar presupuesto</label>
+              <input type="number" class="form-control" id="input-presupuesto" placeholder="$$">
+            </div>
+
+            <input type="button" class="btn btn-primary" id="siguiente" value="Siguiente">
+            
+            <div class="form-group oculto" id="formulario">
+              <label class="ingresar-presupuesto">Ingresar gasto</label>
+              <input type="number" class="form-control" id="input_gasto" placeholder="$$">
+            </div>
+
+            <div class="form-group oculto" id="formulario">
+              <label class="">Descripción</label>
+              <textarea class="form-control" rows="3" id="descripcion"></textarea>
+            </div>
+
+            <input class="btn btn-primary oculto" type="submit" value="Ingresar" id="btnIngresar">
+
+            <input class="btn btn-primary oculto" type="submit" value="Borrar Todo" id="btnBorrar">
+            
+          </form>
+        </div>
+        <div class="col-sm derecha" id="resultado">
+          <div class="row" id="lista">
+            
+          </div>
+          <div class="alert alert-primary"  id="presupuesto_resultado">Presupuesto:</div>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      &copy;Facundo Benitez || Gasto semanal
+    </footer>
+    
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="./assests/js/main.js"></script>
+  </body>
+</html>

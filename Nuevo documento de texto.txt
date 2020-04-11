@@ -1,0 +1,138 @@
+*********GASTO SEMANAL**********
+
+1) Hacer la estructura de la pagina
+1.1) Una caja principal
+1.1.1) 2 cajas- una con los inputs(formulario) y otra con datos impresos
+2) Darle estilo a la pagina
+3) **PROGRAMAR**
+3.1) Ingresar presupuesto y Habilitar el ingreso de gastos y descripción 
+
+
+
+
+
+
+let siguiente = document.querySelector("#siguiente");
+var presupuesto_final, p;
+
+
+siguiente.addEventListener('click', (event)=> {
+    event.preventDefault();
+        
+    let input_presupuesto = document.querySelector("#input-presupuesto");
+    let presupuesto = Number(input_presupuesto.value);
+    p = presupuesto;
+    presupuesto_final = presupuesto;
+
+    evaluarIngreso(presupuesto);
+});
+
+
+function evaluarIngreso(presupuesto){
+    if(presupuesto > 0){
+        mostrarGastoYDescripcion();
+        mostrarPresupuestoYColores(presupuesto);
+        desabilitarBoton();
+        ingresoGasto();
+
+    }else{
+        alert("Debes ingresar un valor numerico");
+        return false;
+    }
+}
+
+function mostrarGastoYDescripcion(){
+    const form = document.querySelectorAll(".form-group");
+    const btnIngresar = document.querySelector("#btnIngresar");
+    
+    for(let i=0; i<form.length; i++){
+        form[i].className = 'form-group';
+    }
+    btnIngresar.className = 'btn btn-primary';
+}
+
+function mostrarPresupuestoYColores(presupuesto){
+    let presupuesto_resultado = document.querySelector("#presupuesto_resultado");
+    presupuesto_resultado.innerHTML = 'Presupuesto: '+presupuesto;
+    
+    if(presupuesto_final<= p/4){
+        presupuesto_resultado.className = 'alert'+' '+'alert-danger';
+    }else if(presupuesto_final <= p/2){
+        presupuesto_resultado.className = 'alert'+' '+'alert-warning';
+    }else{
+         presupuesto_resultado.className = 'alert'+' '+'alert-success';
+    }
+    
+}
+
+function ingresoGasto(){
+    const btnIngreso = document.querySelector("#btnIngresar");
+    let presupuesto = Number(document.querySelector("#input-presupuesto").value);
+    presupuesto_final = presupuesto;
+
+    btnIngreso.addEventListener('click', (event)=>{
+        event.preventDefault();
+        let gasto = Number(document.querySelector("#input_gasto").value);
+
+        if(evaluarIngresoGasto(gasto) > 0){
+            agregarAlaLista(gasto);
+            let diferencia = restaDelPresupuesto(presupuesto_final, gasto);
+            mostrarPresupuestoYColores(diferencia);
+            limpiarInputs();
+        }
+    });
+}
+
+function evaluarIngresoGasto(gasto){
+    if(gasto <= 0){
+        alert("Ingresar valor numerico en gastos");
+    }
+    return gasto;
+}
+
+function agregarAlaLista(gasto){
+    const descripcion = document.querySelector("#descripcion").value;
+    const lista = document.querySelector("#lista");
+    const resultado = document.querySelector("#resultado");
+
+    let div = document.createElement('div');
+    div.id = 'gasto'
+    div.className = 'alert'+' '+'alert-info';
+    div.innerHTML ='$-'+gasto+' '+'|| '+descripcion;
+
+    let a = document.createElement('a');
+    a.href = '#'
+    a.className = 'borrar-elemento';
+    a.innerHTML = 'x';
+
+    div.appendChild(a);
+    let jeje = lista.appendChild(div);
+    resultado.appendChild(jeje);
+
+    return gasto;
+}
+
+function restaDelPresupuesto(presupuesto, gasto){
+    let diferencia = presupuesto - gasto;
+    presupuesto_final = diferencia;
+    return diferencia;
+}
+function limpiarInputs(){
+    document.querySelector("#input_gasto").value = "";
+    document.querySelector("#descripcion").value = "";
+}
+
+function desabilitarBoton(){
+    let siguiente = document.querySelector("#siguiente");
+    siguiente.disabled = true;
+}
+
+
+//boton borrar gastos
+
+//boton agregar mas presupuesto
+
+//Cuando no hay mas presupuesto, avisarle al usuario
+
+//impedir que se recarguen datos despues de cerrar la pagina
+

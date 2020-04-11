@@ -1,0 +1,68 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: 'Spartan';
+    background-color:#3CA6D0 ;
+
+}
+
+.titulo{
+    /*border: 3px solid black;*/
+    text-align: center;
+    /*margin-top: 20px;*/
+    padding-top: 10px;
+}
+
+.col-sm{
+    background: white;
+   /* height: 420px;*/
+    border-radius: 10px;
+}
+
+.izquierda{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 40px;
+}
+
+.derecha{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 40px;
+}
+
+.oculto{
+    display: none;
+}
+.ingresar-presupuesto{
+    margin-top: 15px;
+}
+.btn{
+    margin-bottom: 10px;
+}
+.resultados{
+    border: 2px solid red;
+    height: 350px;
+}
+
+.alert{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.footer{
+    position:fixed;
+    bottom:0;
+    clear:both;
+    width:100%;
+    text-align: center;
+}
+
+.borrar-elemento,
+.borrar-elemento:hover{
+    float: right;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+}

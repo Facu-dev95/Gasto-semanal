@@ -1,0 +1,17 @@
+{
+  "name": "gasto-semanal",
+  "version": "1.0.0",
+  "description": "Organizar mi presupuesto",
+  "main": "index.html",
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "bootstrap": "^4.4.1",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Facundo Benitez",
+  "license": "ISC"
+}
